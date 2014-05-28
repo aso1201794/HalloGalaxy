@@ -1,15 +1,16 @@
 package com.example.helloandroid;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -24,8 +25,26 @@ public class MainActivity extends Activity {
 					.commit();
 		}
 	}
+	
+	@Override
+	
 
 	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		case R.id.btnOK:
+			EditText etv = (EditText)findViewById(R.id.edtFirst);
+			String inputMsg = etv.getText().toString();
+			EditText etv2 = (EditText)findViewById(R.id.edtFamily);
+			String inputMsg2 = etv2.getText().toString();
+			
+			TextView tv = (TextView)findViewById(R.id.txtMSG);
+			tv.setText("あなたでしたか、" + inputMsg + inputMsg2 + "さん。");
+			Intent intent = new Intent(mainActivity.this, MsgActivity.class);
+			StartActivity(intent);
+		}
+	}
+	
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
