@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class MainActivity extends Activity {
 
 	@Override
@@ -25,6 +26,8 @@ public class MainActivity extends Activity {
 					.commit();
 		}
 	}
+	
+
 	
 	public void onClick(View v) {
 		switch(v.getId()){
