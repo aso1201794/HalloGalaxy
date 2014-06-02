@@ -26,22 +26,18 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	@Override
-	
-
-	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
-		case R.id.btnOK:
-			EditText etv = (EditText)findViewById(R.id.edtFirst);
+		case R.id.button_ok:
+			EditText etv = (EditText)findViewById(R.id.first_name);
 			String inputMsg = etv.getText().toString();
-			EditText etv2 = (EditText)findViewById(R.id.edtFamily);
+			EditText etv2 = (EditText)findViewById(R.id.family_name);
 			String inputMsg2 = etv2.getText().toString();
 			
 			TextView tv = (TextView)findViewById(R.id.txtMSG);
 			tv.setText("あなたでしたか、" + inputMsg + inputMsg2 + "さん。");
-			Intent intent = new Intent(mainActivity.this, MsgActivity.class);
-			StartActivity(intent);
+			Intent intent = new Intent(MainActivity.this, MsgActivity.class);
+			startActivity(intent);
 		}
 	}
 	
@@ -52,7 +48,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
@@ -72,7 +67,6 @@ public class MainActivity extends Activity {
 		public PlaceholderFragment() {
 		}
 
-		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
